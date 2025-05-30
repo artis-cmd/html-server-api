@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>m8104_PromptList</title>
+    <link rel="icon" href="../image/favicon/x-As.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../image/favicon/x-As.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/prompt.css">
+</head>
+<body>
+    <!-- 📢 상단 메뉴 -->
+    <div class="top-menu-container">
+        <div class="top-menu">
+            <a href="m8101_Private-Search.html">🔍 Search</a>
+            <a href="m8104_PromptList.html">❓ Prompt List</a>
+            <a href="../hBook/hB3105_Prompt-kr.html">📗 Prompt 한글책</a>
+            <a href="m8102_emoji.html" target="_blank" rel="noopener noreferrer">🔗 🐼_blank</a>
+        </div>
+    </div>
+
+    <!-- 🔹 페이지 제목 -->
+    <div class="page-title">
+        <h2>m8104_【PromptList】🤖 프롬프트 모음 📝</h2>
+    </div>
+
+    <!-- 🔹 검색창 -->
+    <div class="search-container">
+        <input type="text" id="search-box" class="search-box" placeholder="프롬프트 검색..." onkeyup="searchPrompts()" aria-label="프롬프트 검색">
+        <div id="result-summary" class="result-summary">
+            <strong id="search-count">🔎 검색어를 입력하세요. 🚀 아래 List에서 찾아줍니다.</strong>
+            <p id="no-results" class="no-results" style="display: none;">❌ 검색 결과가 없습니다.</p>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>🤖 Prompt List 📑</h2>
+        <!-- 여기에 프롬프트 항목들이 들어갈 예정 -->
+         
+            <!-- prompt1 섹션 시작 -->
+<div class="prompt-item" onclick="togglePrompt(this)" role="button" tabindex="0">
+    <span>회의록 議事録 요점 정리 프롬프트</span>
+    <span class="ai-model">추천 AI모델: ChatGPT-4o 이상</span>
+</div>
+
+<!-- 🔹 상세 내용 (기본적으로 숨김) -->
+<div class="prompt-content" style="display: none;">
+    <pre class="markdown-section" id="prompt1">
+## 요청 사항
+회의록 議事録 의 내용을 제약 조건에 따라 정리해주세요
+
+## 제약 조건
+- 회의록의 내용에 따라 정리할 것
+- 발화 내용에서 발화 의도를 포함한 하고 싶은 말을 추출할 것
+- 추출한 내용에서 연관된 것들을 종합해 하나의 요점으로 정리할 것
+- 각각의 요점은 100자 정도로 요약할 것
+- 명확하고 의미를 이해하기 쉬운 문장으로 만들 것
+- 요점을 Bulletpoint로 나타낼 것
+
+## 분석할 회의록
+`{여기에 회의록을 입력해주세요}`
+
+## 출력 형식
+아래 항목별로 요점을 정리해 주세요:
+1. 회의 목적
+2. 결정된 사항
+3. 이후 과제
+4. To do
+    </pre>
+    <button class="copy-button" onclick="copyPrompt('prompt1')">복사하기</button>
+</div>
+
+
+            <!-- prompt2 섹션 시작 -->
+<div class="prompt-item" onclick="togglePrompt(this)" role="button" tabindex="0">
+    <span>홍보용 글 작성하기 (블로그, 보도자료)</span>
+    <span class="ai-model">추천 AI모델: Claude</span>
+</div>
+
+<!-- 🔹 상세 내용 (기본적으로 숨김) -->
+<div class="prompt-content" style="display: none;">
+    <pre class="markdown-section" id="prompt2">
+너는 `회사/업계`의 시니어 `직무명`으로서 `[글 종류 기재 (ex-블로그, 보도자료 등)]`을 작성해야해.  
+다음 예시를 참고해서 비슷한 톤 앤 매너로 새로운 주제의 글을 써보자.
+
+## 예시
+`[잘 쓴 글 예시 입력]`
+
+## 분석 및 새 글 작성 요청
+위의 예시 글을 잘 분석해서 톤앤매너와 글 양식을 파악했으면,  
+이제 `주제`에 관한 새로운 `[글(ex-블로그글, 보도자료)]`를 작성해줘.
+
+## 제약조건
+- 예시 문체를 그대로 차용해 작성할 것
+- 주제를 반영한 매력적인 제목을 만들 것 (단, 주제와 똑같은 제목은 안됨)
+
+## 안내사항
+예시와 최대한 비슷한 문체와 어조를 유지하되,  
+주제에 맞는 새로운 내용으로 채워넣기 바란다. 그리고 제약조건도 잊지 말고 꼭 지켜줘.
+
+## 출력 형식
+자, 그럼 시작해볼까?  
+완성된 글은 `<글>___</글>　` 태그로 감싸서 출력해줘
+    </pre>
+    <button class="copy-button" onclick="copyPrompt('prompt2')">복사하기</button>
+</div>
+
+<!-- prompt3 섹션 시작 -->
+<div class="prompt-item" onclick="togglePrompt(this)" role="button" tabindex="0">
+    <span>프로젝트 개요 작성 프롬프트</span>
+    <span class="ai-model">추천 AI모델: Claude, ChatGPT4 이상</span>
+</div>
+
+<!-- 🔹 상세 내용 (기본적으로 숨김) -->
+<div class="prompt-content" style="display: none;">
+    <pre class="markdown-section" id="prompt3">
+## 역할 : 20년 이상의 경력을 가진 시니어 프로젝트 관리자
+
+## 요청 : [프로젝트 목표]을 위한 [프로젝트 내용]의 개요 작성
+
+## 필수 포함 내용 : 
+1. 프로젝트 배경 (`[배경을 적어주세요]`)
+2. 프로젝트 목표 및 마일스톤 (`[목표를 적어주세요]`)
+3. 프로젝트의 타임라인(`[프로젝트 시작, 종료일을 적어주세요]`)
+4. 타겟 고객 (`[누구를 대상으로 하는지 적어주세요]`)
+
+## 작성 스타일 : 
+- 깔끔하고 중학생도 이해할 수 있는 쉬운 단어 사용
+- 개조식 톤 앤 매너 유지 (예: "~했음", "~제고" 등으로 끝나는 보고서 말투)
+    </pre>
+    <button class="copy-button" onclick="copyPrompt('prompt3')">복사하기</button>
+</div>
+
+<!-- prompt4 섹션 시작 -->
+<div class="prompt-item" onclick="togglePrompt(this)" role="button" tabindex="0">
+    <span>문장 교정 프롬프트</span>
+    <span class="ai-model">추천 AI모델: ChatGPT-4o 이상</span>
+</div>
+
+<!-- 🔹 상세 내용 (기본적으로 숨김) -->
+<div class="prompt-content" style="display: none;">
+    <pre class="markdown-section" id="prompt4">
+## 요청 사항
+입력된 문장의 문법적 오류를 검토하고 수정해주세요
+
+## 교정 대상
+`{교정할 문장 입력}`
+
+### 출력 형식
+1. 교정된 문장 전문
+2. 수정사항 정리표 : 
+
+| 위치 | 원문 | 수정 | 수정 사유 |
+|------|------|------|------|
+| | | | |
+
+#### 교정 항목
+ - 맞춤법 오류
+ - 탈자 / 오타
+ - 어미 불일치
+ - 문법적 오류
+    </pre>
+    <button class="copy-button" onclick="copyPrompt('prompt4')">복사하기</button>
+</div>
+
+
+<!-- prompt5 섹션 시작 -->
+<div class="prompt-item" onclick="togglePrompt(this)" role="button" tabindex="0">
+    <span>프롬프트 제작 도우미</span>
+    <span class="ai-model">추천 AI모델: ChatGPT-4o 이상</span>
+</div>
+
+<!-- 🔹 상세 내용 (기본적으로 숨김) -->
+<div class="prompt-content" style="display: none;">
+    <pre class="markdown-section" id="prompt5">
+## 소개
+프로페셔널 프롬프트 엔지니어의 도움을 받아 효과적인 프롬프트를 작성합니다.
+
+## 요청 내용
+당신이 ChatGPT에게 부탁하고 싶은 작업을 입력하시면, 최적의 프롬프트를 생성해 드립니다.
+
+## 입력 양식
+### 작업 설명
+`여기에 부탁하고 싶은 것을 적어주세요`
+
+### 제약 조건
+`여기에 제약조건 3 ~ 5개를 나열해주세요`
+
+## 출력 형식
+생성된 프롬프트는 아래와 같은 구조로 제공됩니다:
+1. 프롬프트 제목
+2. 역할 설정
+3. 주요 지시사항
+4. 세부 요구사항
+5. 제약사항
+6. 출력 형식
+    </pre>
+    <button class="copy-button" onclick="copyPrompt('prompt5')">복사하기</button>
+</div>
+
+<!-- prompt6 섹션 시작 -->
+<div class="prompt-item" onclick="togglePrompt(this)" role="button" tabindex="0">
+    <span>정보를 체계적으로 정리하는 문서 작성 전문가 (마크다운 템플릿)</span>
+    <span class="ai-model">추천 AI모델: 범용</span>
+</div>
+
+<!-- 🔹 상세 내용 (기본적으로 숨김) -->
+<div class="prompt-content" style="display: none;">
+    <pre class="markdown-section" id="prompt6">
+너는 정보를 체계적으로 정리하는 10년 이상 경력의 베테랑 문서 작성 전문가야.
+특히 마크다운(Markdown) 템플릿에 따라 Obsidian에 정보를 정확하고 일관되게 정리하는 역할을 맡고 있어.
+
+다음 형식에 맞춰 응답해줘. 
+반드시 마크다운(Markdown) 형식을 사용하고, 스타일은 아래 기준을 따라줘.
+        
+## 🧠 {{제목}}
+
+### ❓ 질문 내용  
+{{질문_내용}}
+
+### 💬 AI 응답 요약  
+- {{요약_포인트1}}  
+- {{요약_포인트2}}  
+
+### 📄 전체 내용  
+{{전체_응답_텍스트}}
+
+---
+
+출력 스타일 가이드 : 
+  - 모든 제목은 마크다운의 헤딩 문법 사용  
+  - 섹션 구분은 `##`, 하위 구분은 `###` 또는 `####`  
+  - 리스트는 `-` 기호 사용  
+  - 각 섹션 간에는 불필요한 빈 줄 없이 간결하게 출력할 것  
+  - 시각적 일관성을 위해 마크다운 문법 오류 없이 출력할 것
+    </pre>
+    <button class="copy-button" onclick="copyPrompt('prompt6')">복사하기</button>
+</div>
+
+    </div>
+    <br><br><br>
+
+    <!-- 🔹 JavaScript 로딩 -->
+    <script src="../js/prompt.js" defer></script>
+
+</body>
+</html> 
