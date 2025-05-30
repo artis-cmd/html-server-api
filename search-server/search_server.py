@@ -3,7 +3,7 @@ import os
 import glob
 
 # ✅ HTML 파일이 저장된 기본 폴더 경로
-HTML_FOLDER = os.path.abspath(os.environ.get('HTML_FOLDER', 'html'))
+HTML_FOLDER = r"E:\OneDrive\HTML"
 
 # ✅ Flask 앱 정의
 app = Flask(__name__, static_folder=HTML_FOLDER, static_url_path='')

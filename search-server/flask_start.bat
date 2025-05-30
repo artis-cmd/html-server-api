@@ -1,4 +1,5 @@
 @echo off
-cd /d E:\OneDrive\HTML\search-server
-C:\Python312\python.exe search_server.py
+set HTML_FOLDER=E:\OneDrive\HTML
+set PORT=5000
+python search_server.py
 pause
