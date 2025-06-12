@@ -36,13 +36,6 @@
         <div class="sidebar">
             <h3>목차</h3>
             <ul>
-                <li><a href="#section0">0️⃣ 자동 업로드 설정하기</a></li>
-                <li><a href="#section1">1️⃣ Git 설치하기</a></li>
-                <li><a href="#section2">2️⃣ GitHub 계정 만들기</a></li>
-                <li><a href="#section3">3️⃣ GitHub 저장소 만들기</a></li>
-                <li><a href="#section4">4️⃣ 저장소 설정하기</a></li>
-                <li><a href="#section5">5️⃣ 로컬 저장소 연결하기</a></li>
-                <li><a href="#section6">6️⃣ GitHub Pages 설정하기</a></li>
                 <li><a href="#section7">7️⃣ 저장소 공개/비공개 설정</a></li>
                 <li><a href="#section8">8️⃣ 협업자 관리하기</a></li>
                 <li><a href="#section9">9️⃣ 브랜치 관리하기</a></li>
@@ -50,247 +43,10 @@
             </ul>
         </div>
         <div class="content">
-            <h1>GitHub Manual</h1>
-            
-            <div class="step" id="section0">
-                <div class="step-title">0️⃣ 자동 업로드 설정하기</div>
-                <div class="step-content">
-                    <div class="step-description">
-                        <h3>E:\OneDrive\HTML 폴더 자동 업로드</h3>
-                        <p>E:\OneDrive\HTML 폴더를 GitHub에 자동으로 업로드하려면 PowerShell 스크립트를 사용할 수 있습니다.</p>
-                        
-                        <h4>PowerShell 스크립트 실행 가이드</h4>
-                        
-                        <h5>1. 초기 설정 (최초 1회만 실행)</h5>
-                        <p>PowerShell을 관리자 권한으로 실행한 후:</p>
-                        <div class="code-block">
-                            <pre><code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
-                        </div>
-                        <p>실행 후 'Y' 입력하여 승인</p>
-
-                        <h5>2. git-sync.ps1 스크립트 실행 방법</h5>
-                        
-                        <p>방법 1: PowerShell에서 직접 실행</p>
-                        <ol>
-                            <li>PowerShell 실행</li>
-                            <li>B 드라이브로 이동: <code>cd B:\</code></li>
-                            <li>스크립트 실행: <code>.\git-sync.ps1</code></li>
-                        </ol>
-
-                        <p>방법 2: 파일 우클릭으로 실행</p>
-                        <ol>
-                            <li><code>git-sync.ps1</code> 파일 우클릭</li>
-                            <li>"PowerShell로 실행" 선택</li>
-                        </ol>
-
-                        <h5>3. 주의사항</h5>
-                        <ul>
-                            <li>스크립트 실행 전 반드시 H 드라이브의 작업 내용을 B 드라이브로 복사해야 함</li>
-                            <li>스크립트는 B:\HTML 폴더의 변경사항만 GitHub에 업로드함</li>
-                            <li>실행 결과를 확인한 후 Enter 키를 눌러 창 닫기</li>
-                        </ul>
-
-                        <h5>4. 스크립트 동작 순서</h5>
-                        <ol>
-                            <li>HTML 폴더로 자동 이동</li>
-                            <li>변경된 파일 확인</li>
-                            <li>변경사항 자동 커밋</li>
-                            <li>GitHub 저장소에 자동 업로드</li>
-                        </ol>
-
-                        <h4>수동으로 실행하기</h4>
-                        <pre><code># H:/HTML 폴더에서 B:/HTML 폴더로 복사
-xcopy H:\HTML B:\HTML /E /Y
-
-# B:/HTML 폴더로 이동
-cd B:/HTML
-
-# Git 초기화 (이미 초기화되어 있다면 생략)
-git init
-
-# 원격 저장소 추가 (이미 추가되어 있다면 생략)
-git remote add origin https://github.com/username/repository.git
-
-# 변경 사항 추가
-git add .
-
-# 변경 사항 커밋
-git commit -m "Manual update"
-
-# GitHub에 푸시
-git push -u origin main</code_block_to_apply_changes_from>
-                        </pre>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" id="section1">
-                <div class="step-title">1️⃣ Git 설치하기</div>
-                <div class="step-content">
-                    <div class="step-image">
-                        <img src="../../../image/docs/artis_docs/スクリーンショット 2025-04-04 090442.png" alt="Git 다운로드">
-                    </div>
-                    <div class="step-description">
-                        <h3>Git 설치 과정</h3>
-                        <ol>
-                            <li>Git 공식 웹사이트에서 다운로드</li>
-                            <li>설치 파일 실행</li>
-                            <li>컴포넌트 선택:
-                                <ul>
-                                    <li>Windows Explorer integration</li>
-                                    <li>Git Bash Here</li>
-                                    <li>Git LFS (Large File Support)</li>
-                                    <li>Associate .git* configuration files</li>
-                                </ul>
-                            </li>
-                        </ol>
-                        <div class="tip">
-                            💡 Tip: 기본 설정값을 그대로 사용하는 것을 추천합니다.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" id="section2">
-                <div class="step-title">2️⃣ GitHub 계정 만들기</div>
-                <div class="step-content">
-                    <div class="step-image">
-                        <img src="/HTML/image/docs/artis_docs/スクリーンショット 2025-04-04 093635.png" alt="GitHub 회원가입">
-                    </div>
-                    <div class="step-description">
-                        <h3>GitHub 계정 생성</h3>
-                        <ol>
-                            <li>GitHub.com 방문</li>
-                            <li>Sign up 클릭</li>
-                            <li>필요한 정보 입력:
-                                <ul>
-                                    <li>이메일 주소</li>
-                                    <li>비밀번호</li>
-                                    <li>사용자 이름</li>
-                                </ul>
-                            </li>
-                        </ol>
-                        <div class="tip">
-                            💡 Tip: 사용자 이름은 나중에 URL의 일부가 되므로 신중하게 선택하세요.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" id="section3">
-                <div class="step-title">3️⃣ GitHub 저장소 만들기</div>
-                <div class="step-content">
-                    <div class="step-image">
-                        <img src="/HTML/image/docs/artis_docs/スクリーンショット 2025-04-04 100019.png" alt="새 저장소 생성">
-                    </div>
-                    <div class="step-description">
-                        <h3>새 저장소 생성</h3>
-                        <ol>
-                            <li>GitHub 대시보드에서 'New repository' 클릭</li>
-                            <li>저장소 정보 입력:
-                                <ul>
-                                    <li>Repository name: 프로젝트 이름</li>
-                                    <li>Description: 프로젝트 설명 (선택사항)</li>
-                                    <li>Visibility: Public 또는 Private 선택</li>
-                                    <li>Initialize with README: 체크</li>
-                                </ul>
-                            </li>
-                            <li>'Create repository' 클릭</li>
-                        </ol>
-                        <div class="tip">
-                            💡 Tip: Private 저장소는 나중에 Public으로 변경할 수 있습니다.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" id="section4">
-                <div class="step-title">4️⃣ 저장소 설정하기</div>
-                <div class="step-content">
-                    <div class="step-image">
-                        <img src="/HTML/image/docs/artis_docs/スクリーンショット 2025-04-04 100122.png" alt="저장소 설정">
-                    </div>
-                    <div class="step-description">
-                        <h3>저장소 설정</h3>
-                        <ol>
-                            <li>저장소의 'Settings' 탭 클릭</li>
-                            <li>주요 설정 항목:
-                                <ul>
-                                    <li>Collaborators: 협업자 추가</li>
-                                    <li>Branches: 브랜치 보호 규칙 설정</li>
-                                    <li>Pages: GitHub Pages 설정</li>
-                                </ul>
-                            </li>
-                        </ol>
-                        <div class="note">
-                            ⚠️ Note: 저장소 설정은 언제든지 변경할 수 있습니다.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" id="section5">
-                <div class="step-title">5️⃣ 로컬 저장소 연결하기</div>
-                <div class="step-content">
-                    <div class="step-image">
-                        <img src="/HTML/image/docs/artis_docs/スクリーンショット 2025-04-04 101306.png" alt="Git 명령어">
-                    </div>
-                    <div class="step-description">
-                        <h3>로컬 저장소 설정</h3>
-                        <ol>
-                            <li>Git Bash 실행</li>
-                            <li>프로젝트 폴더로 이동</li>
-                            <li>다음 명령어 실행:
-                                <div class="command">
-                                    git init<br>
-                                    git add .<br>
-                                    git commit -m "Initial commit"<br>
-                                    git remote add origin [저장소URL]<br>
-                                    git push -u origin main
-                                </div>
-                            </li>
-                        </ol>
-                        <div class="tip">
-                            💡 Tip: 저장소 URL은 GitHub 저장소 페이지의 'Code' 버튼에서 확인할 수 있습니다.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" id="section6">
-                <div class="step-title">6️⃣ GitHub Pages 설정하기</div>
-                <div class="step-content">
-                    <div class="step-image">
-                        <img src="/HTML/image/docs/artis_docs/スクリーンショット 2025-04-04 101550.png" alt="GitHub Pages 설정">
-                    </div>
-                    <div class="step-description">
-                        <h3>GitHub Pages 활성화</h3>
-                        <ol>
-                            <li>저장소의 'Settings' 탭에서 'Pages' 메뉴 선택</li>
-                            <li>Source 설정:
-                                <ul>
-                                    <li>Branch: main 또는 gh-pages</li>
-                                    <li>폴더: / (root) 또는 /docs</li>
-                                </ul>
-                            </li>
-                            <li>'Save' 클릭</li>
-                        </ol>
-                        <div class="tip">
-                            💡 Tip: GitHub Pages는 정적 웹사이트 호스팅에 최적화되어 있습니다.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="step" id="section7">
-                <div class="step-title">7️⃣ 저장소 공개/비공개 설정</div>
-                <div class="step-content">
-                    <div class="step-image">
-                        <img src="/HTML/image/docs/artis_docs/スクリーンショット 2025-04-04 100201.png" alt="저장소 공개 설정">
-                    </div>
                     <div class="step-description">
                         <h3>저장소 가시성 변경</h3>
-                        
+                            <img src="../../image/docs/artis_docs/github/private-d.png" alt="저장소 공개 설정">
                         <h4>1. 새 저장소 생성 시 설정하기</h4>
                         <ol>
                             <li>GitHub에 로그인 후 오른쪽 상단의 '+' 아이콘을 클릭하고 'New repository' 선택</li>
@@ -375,7 +131,7 @@ git push -u origin main</code_block_to_apply_changes_from>
                 <div class="step-title">9️⃣ 브랜치 관리하기</div>
                 <div class="step-content">
                     <div class="step-image">
-                        <img src="../../image/docs/artis_docs/スクリーンショット 2025-04-04 101901.png" alt="브랜치 관리">
+                        <img src="../../image/docs/artis_docs/スクリーンショット 2025-04-04 101901.png" alt="브랜치 관리" style="width:80% !important; height:auto;">
                     </div>
                     <div class="step-description">
                         <h3>브랜치 생성 및 관리</h3>
@@ -404,7 +160,7 @@ git push -u origin main</code_block_to_apply_changes_from>
                 <div class="step-title">🔟 문제 해결하기</div>
                 <div class="step-content">
                     <div class="step-image">
-                        <img src="../../image/docs/artis_docs/スクリーンショット 2025-04-04 102350.png" alt="문제 해결">
+                        <img src="../../image/docs/artis_docs/スクリーンショット 2025-04-04 102350.png" alt="문제 해결" style="width:80% !important; height:auto;">
                     </div>
                     <div class="step-description">
                         <h3>일반적인 Git 문제 해결</h3>
@@ -425,44 +181,13 @@ git push -u origin main</code_block_to_apply_changes_from>
                                 </div>
                             </li>
                         </ol>
-                        <div class="note">
-                            ⚠️ Note: 강제 푸시는 팀 프로젝트에서 주의해서 사용해야 합니다.
-                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
+    <br><br><br>
 
-    <div class="menu-container">
-        <div class="dropdown">
-            <div class="dropdown-toggle">📊 Artis 資産運用 Team 📊</div>
-            <div class="dropdown-content">
-                <div class="level-2">📊 트레이딩 시스템</div>
-                <div class="level-2-content">
-                    <!-- 트레이딩 시스템 하위 메뉴 -->
-                </div>
-
-                <div class="level-2">🔨 생산성 시스템</div>
-                <div class="level-2-content">
-                    <div class="level-2">📝 Obsidian</div>
-                    <div class="level-2-content">
-                        <a href="#">📁 Obsidian PARA 폴더구조</a>
-                        <a href="#">🎨 Obsidian Color Setting</a>
-                        <a href="#">👨‍🏫 Obsidian Guide</a>
-                        <a href="#">💟 지식관리 끝판왕, 옵시디언 바이블</a>
-                    </div>
-
-                    <div class="level-2">⚡ 작업 도구</div>
-                    <div class="level-2-content">
-                        <a href="#">⌨️ Keyboard Manual</a>
-                        <a href="#">🐼 즐겁찾는 emoji</a>
-                        <a href="#">📝 Prompt List</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 </html> 
