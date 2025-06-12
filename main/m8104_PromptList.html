@@ -289,7 +289,7 @@ Please follow these steps:
 - Balance text and visuals with ample white space.
 - Establish a clear information hierarchy with headings and subheadings.
 - Include only essential content; remove unnecessary text.
-- Highlight statistics and key numbers so they’re immediately visible.
+- Highlight statistics and key numbers so they're immediately visible.
     </pre>
     <button class="copy-button" onclick="copyPrompt('prompt8')">복사하기</button>
 </div>
@@ -393,7 +393,7 @@ Follow the steps below:
    Identify and extract key charts/diagrams/figures used in the paper (either recreate them or summarize their insights).
 
 4. Summarize Key Insights  
-   Write short bullet-pointed insights (max 6 points) based on the paper’s objectives, methods, findings, and conclusions.
+   Write short bullet-pointed insights (max 6 points) based on the paper's objectives, methods, findings, and conclusions.
 
 # Poster Creation  
 Design a single-slide academic poster that visually communicates the extracted insights:  
@@ -423,6 +423,51 @@ Generate the final outputs in the following formats:
     <button class="copy-button" onclick="copyPrompt('prompt11')">복사하기</button>
 </div>
 <!-- prompt11 섹션 끝 -->
+
+            <!-- prompt12 섹션 시작 -->
+<div class="prompt-item" onclick="togglePrompt(this)" role="button" tabindex="0">
+    <span>영어 프롬프트: 주제별 상세 정보 분류하기 (프로그램 작성처럼)</span>
+    <span class="ai-model">추천 AI모델: Gemini, GPT-4, Claude 3 등</span>
+</div>
+
+<!-- 🔹 상세 내용 (기본적으로 숨김) -->
+<div class="prompt-content" style="display: none;">
+    <pre class="markdown-section" id="prompt12">
+Prompt:
+Respond to the following given topic.
+Gather the details as thoroughly as
+possible, then categorize them
+according to the following format:
+
+- Fact: { }
+- Your opinion: { }
+- Topic:
+    </pre>
+    <button class="copy-button" onclick="copyPrompt('prompt12')">복사하기</button>
+</div>
+<!-- prompt12 섹션 끝 -->
+
+            <!-- prompt13 섹션 시작 -->
+<div class="prompt-item" onclick="togglePrompt(this)" role="button" tabindex="0">
+    <span>한글 프롬프트: 주제별 상세 정보 분류하기 (프로그램 작성처럼)</span>
+    <span class="ai-model">추천 AI모델: Gemini, GPT-4, Claude 3 등</span>
+</div>
+
+<!-- 🔹 상세 내용 (기본적으로 숨김) -->
+<div class="prompt-content" style="display: none;">
+    <pre class="markdown-section" id="prompt13">
+프롬프트:
+다음 주제에 대해 답변해줘. 가능한 한
+상세한 정보를 모아. 그리고 다음 형식에 따라
+분류해줘.
+
+- 사실: { }
+- 나의 견해: { }
+- 주제: 
+    </pre>
+    <button class="copy-button" onclick="copyPrompt('prompt13')">복사하기</button>
+</div>
+<!-- prompt13 섹션 끝 -->
 
     </div>
     <br><br><br>
